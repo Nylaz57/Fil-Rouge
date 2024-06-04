@@ -1,0 +1,34 @@
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  padding-top: 5em;
+}
+
+h2 {
+  padding: 3em;
+}
+
+.index-form {
+  input {
+    margin: 1em;
+  }
+}
+
+.index-error {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.img-modele {
+  max-width: 30%;
+}
+/* 
+.img-actualite {
+  width: 100%;
+  max-width: 600px;
+} */
