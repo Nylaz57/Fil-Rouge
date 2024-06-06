@@ -1,6 +1,6 @@
 <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
     <h1>Éditer une catégorie de matériel</h1>
-    <form action="" method="POST">
+    <form method="POST">
         <div>
             <label for="famille">Nom de la catégorie :</label>
             <input type="text" name="famille" value="<?php echo htmlspecialchars($categorie['nom_famille']) ?>" required>

@@ -27,6 +27,9 @@
                     $_SESSION['prenom'] = $ligne["prenom"];
                     $_SESSION['nom_utilisateur'] = $ligne["nom_utilisateur"];
                     $_SESSION['statut'] = $ligne["Id_statut"];
+                    $_SESSION['adresse'] = $ligne["adresse"];
+                    $_SESSION['code_postal'] = $ligne["code_postal"];
+                    $_SESSION['ville'] = $ligne["ville"];
                     header('Location: /?page=accueil');
                     exit;
                 } else {

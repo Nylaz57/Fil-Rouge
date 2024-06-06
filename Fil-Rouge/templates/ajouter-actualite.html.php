@@ -1,6 +1,6 @@
 <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
     <h1>Ajout d'une actualité</h1>
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         <div>
             <label for="titre">Titre :</label>
             <input type="text" id="titre" name="titre" maxlength="20" placeholder="20 caractères max" required>

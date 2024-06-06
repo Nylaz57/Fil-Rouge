@@ -1,7 +1,7 @@
 <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
     <h1>Modifier un utilisateur</h1>
 
-    <form action="" method="POST">
+    <form method="POST">
         <div>
             <label>Statut :</label>
             <select name="statut">

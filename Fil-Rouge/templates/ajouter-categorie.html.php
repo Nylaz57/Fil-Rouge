@@ -1,6 +1,6 @@
 <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
     <h1>Ajout d'une catégorie</h1>
-    <form action="" method="POST">
+    <form method="POST">
         <div>
             <label>Nouvelle catégorie :</label>
             <input type="text" name="nom" required>
@@ -26,6 +26,5 @@
     if (!empty($erreurs)) {
         echo $erreurs['nom'];
     }
-    var_dump($_POST);
 }
     // Statuts stockés dans un tableau
