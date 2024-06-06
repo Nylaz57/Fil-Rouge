@@ -1,0 +1,186 @@
+:root {
+
+
+    /* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        COLOR PALETTE COLOR PALETTE COLOR PALETTE COLOR P
+    ////////////////////////////////////////////////////
+    */
+
+    --black: #010101;
+
+
+
+    /* 
+    MSX PALETTE 1983 (Microsoft)
+    */
+    --MSX-black: #000000;
+    --MSX-gray: #cacaca;
+    --MSX-white: #ffffff;
+    --MSX-dark-red: #b75e51;
+    --MSX-medium-red: #d96459;
+    --MSX-light-red: #fe877c;
+    --MSX-dark-yellow: #cac15e;
+    --MSX-light-yellow: #ddce85;
+    --MSX-dark-green: #3ca042;
+    --MSX-medium-green: #40b64a;
+    --MSX-light-green: #73ce7c;
+    --MSX-dark-blue: #5955df;
+    --MSX-medium-blue: #7e75f0;
+    --MSX-light-blue: #64daee;
+    --MSX-magenta: #b565b3;
+
+    /* 
+    GameBoy nymph
+    */
+    --GB-nymph-purple: #2c2137;
+    --GB-nymph-dark-blue: #446176;
+    --GB-nymph-light-blue: #3fac95;
+    --GB-nymph-green: #a1ef8c;
+
+    /* 
+    Lucas Pope' sea Game
+    */
+    --LP-blue: #226594;
+    --LP-green: #b1f2b1;
+    --LP-orange: #f5ad78;
+
+    /* 
+    Prime Video
+    */
+    --PV-black: rgb(0, 5, 13);
+    --PV-gray: rgb(170, 170, 170);
+    --PV-white: rgb(255, 255, 255);
+    --PV-blue-dark: rgb(25, 30, 37);
+
+    /* 
+    Spotify
+    */
+    --Sp-black: rgb(18, 18, 18);
+    --Sp-gray-dark: rgb(57, 57, 57);
+    --Sp-gray-light: rgb(83, 83, 83);
+    --Sp-green: rgb(30, 220, 98);
+    /* #1edc62*/
+
+    /* 
+    Powerade
+    */
+    --PA-blue: #32dee3;
+
+    /* 
+    GRADIENT 
+    */
+    --Gr-Blue-gradient: linear-gradient(0deg, rgba(67, 60, 160, 1) 0%, rgba(34, 101, 148, 1) 100%);
+
+
+    /* 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+        MEASURES MEASURES MEASURES MEASURES MEASURES MEA
+    ////////////////////////////////////////////////////
+    */
+    --SECAM-width: calc((100vw * 3) / 4);
+    --SECAM-pi-width: calc((100vw * 3.14) / 4);
+
+    --GB-width: 160px;
+    --GB-height: 144px;
+
+    --3310-width: 84px;
+    --3310-height: 48px;
+
+
+
+}
+
+
+/* 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    FONTS FONTS FONTS FONTS FONTS FONTS FONTS FONTS 
+////////////////////////////////////////////////////
+*/
+
+@font-face {
+    font-family: CeraProLight;
+    src: url(../fonts/CeraProLight.otf);
+}
+
+@font-face {
+    font-family: CeraProMedium;
+    src: url(../fonts/CeraProMedium.otf);
+}
+
+@font-face {
+    font-family: CeraProBold;
+    src: url(../fonts/CeraProBold.otf);
+}
+
+@font-face {
+    font-family: Pico8;
+    src: url(../fonts/PICO-8.ttf);
+}
+
+
+
+
+/* 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    KEYFRAMES KEYFRAMES KEYFRAMES KEYFRAMES KEYFRAME 
+////////////////////////////////////////////////////
+*/
+
+
+@keyframes toggleLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+@keyframes toast {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes wobble {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: translateX(5px);
+    }
+
+    80% {
+        transform: translateX(1px);
+    }
+
+    90% {
+        transform: translateX(-1px);
+    }
+}
