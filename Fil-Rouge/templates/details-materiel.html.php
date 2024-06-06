@@ -38,5 +38,5 @@
         <?php } ?>
     </ul>
 <?php
-    var_dump($_SESSION);
+
 }
