@@ -54,8 +54,11 @@ AND (
 );");
             $requete->execute([
                 "Id_modele" => $_GET['id'],
-                "debutLoc" => $debutLoc,
-                "finLoc" => $finLoc
+                "debutLoc" => date("Y-m-d", $debutLoc),
+                "finLoc" => date(
+                    "Y-m-d",
+                    $finLoc
+                )
             ]);
             $modelesLoc = $requete->fetch();
 

@@ -20,15 +20,15 @@
         <tbody>
             <?php foreach ($locations as $location) { ?>
                 <tr>
-                    <td><?php echo htmlspecialchars($location['Id_location']) ?></td>
-                    <td><?php echo htmlspecialchars($location['nom_utilisateur']) ?></td>
-                    <td><?php echo htmlspecialchars($location['prenom']) ?></td>
-                    <td><?php echo htmlspecialchars($location['localisation']) ?></td>
-                    <td><?php echo htmlspecialchars($location['date_debut']) ?></td>
-                    <td><?php echo htmlspecialchars($location['date_fin']) ?></td>
-                    <td><?php echo htmlspecialchars($location['date_retour']) ?></td>
-                    <td><?php echo htmlspecialchars($location['numero_serie']) ?></td>
-                    <td><?php echo htmlspecialchars($location['nom_modele']) ?></td>
+                    <td><?php echo isset($location['Id_location']) ? htmlspecialchars($location['Id_location']) : '' ?></td>
+                    <td><?php echo isset($location['nom_utilisateur']) ? htmlspecialchars($location['nom_utilisateur']) : '' ?></td>
+                    <td><?php echo isset($location['prenom']) ? htmlspecialchars($location['prenom']) : '' ?></td>
+                    <td><?php echo isset($location['localisation']) ? htmlspecialchars($location['localisation']) : '' ?></td>
+                    <td><?php echo isset($location['date_debut']) ? htmlspecialchars($location['date_debut']) : '' ?></td>
+                    <td><?php echo isset($location['date_fin']) ? htmlspecialchars($location['date_fin']) : '' ?></td>
+                    <td><?php echo isset($location['date_retour']) ? htmlspecialchars($location['date_retour']) : '' ?></td>
+                    <td><?php echo isset($location['numero_serie']) ? htmlspecialchars($location['numero_serie']) : '' ?></td>
+                    <td><?php echo isset($location['nom_modele']) ? htmlspecialchars($location['nom_modele']) : '' ?></td>
 
 
                 </tr>
