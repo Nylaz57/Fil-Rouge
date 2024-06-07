@@ -7,8 +7,9 @@
     ////////////////////////////////////////////////////
     */
 
-    --black: #010101;
-
+    --my-black: #010101;
+    --my-blue: rgb(30, 141, 220);
+    --my-orange: #f5ad78;
 
 
     /* 
@@ -127,6 +128,10 @@
 ////////////////////////////////////////////////////
 */
 
+.toggleLeft {
+    animation: toggleLeft 3s linear;
+    animation-iteration-count: 1;
+}
 
 @keyframes toggleLeft {
     from {
@@ -138,7 +143,10 @@
     }
 }
 
-
+.toast {
+    animation: welcome 3s linear;
+    animation-iteration-count: 1;
+}
 
 @keyframes toast {
     0% {
@@ -154,6 +162,11 @@
         opacity: 1;
         transform: translateY(0px);
     }
+}
+
+.wobble {
+    animation: wobble 3s linear;
+    animation-iteration-count: 1;
 }
 
 @keyframes wobble {
@@ -182,5 +195,79 @@
 
     90% {
         transform: translateX(-1px);
+    }
+}
+
+.welcome {
+    animation: welcome 3s linear;
+    animation-iteration-count: 1;
+}
+
+@keyframes welcome {
+    0% {
+        clip-path: inset(0 100% 100% 0);
+        transform: translate(0px, 0px);
+    }
+
+    /* bar */
+
+    7% {
+        clip-path: inset(0 100% 100% 0);
+    }
+
+    8% {
+        clip-path: inset(0 80% 98.5% 0);
+    }
+
+    60% {
+        clip-path: inset(0 0 98.5% 0);
+    }
+
+    64% {
+        clip-path: inset(0 0 90.8% 0);
+    }
+
+    /* top */
+
+    68% {
+        transform: translate(0px, 0px);
+    }
+
+    73% {
+        transform: translate(10px, -2px);
+    }
+
+
+    78% {
+        transform: translate(0px, 0px);
+    }
+
+    /* move */
+
+    80% {
+        clip-path: inset(0 0 90.8% 0);
+        transform: translate(0px, 0px);
+    }
+
+    90% {
+        transform: translate(0px, 0px);
+    }
+
+    95% {
+        clip-path: inset(0 0 90.8% 0);
+        transform: translate(0px, 2px);
+    }
+
+    97% {
+        transform: translate(0px, 0px);
+    }
+
+    99% {
+        transform: translate(0px, 0px);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+        transform: translate(0px, 0px);
     }
 }

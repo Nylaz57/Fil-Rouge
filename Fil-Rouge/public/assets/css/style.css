@@ -28,24 +28,35 @@ html {
 }
 
 .container-connexion h1 {
+  color: var(--PV-white);
+  /* filter: brightness(300%) grayscale(66%); */
   padding: 0;
-  margin: 0;
+  margin-bottom: 3px;
   font-family: CeraProLight;
   line-height: 1.6em;
   text-align: left;
-  color: var(--Sp-black);
+}
+
+.container-connexion label::first-letter {
+  font-size: 1rem;
+}
+
+.container-connexion h1 span {
+  font-family: CeraProBold;
+  /* font-size: .55em; */
+  color: var(--my-black);
 }
 
 .index h2 {
-  margin: 15px 0 15px 0;
-  font-family: CeraProMedium;
+  margin: 12px 0 25px 0;
+  font-family: CeraProLight;
   line-height: 1.6em;
   color: var(--Sp-black);
   border-bottom: 4px solid var(--Sp-black);
 }
 
 .index {
-  border-radius: 2px;
+  border-radius: 1px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
   padding: 20px;
   background-color: transparent;
@@ -60,10 +71,14 @@ html {
   min-height: 353px;
   max-height: 353px;
   position: relative;
+  animation: welcome 3s linear;
+  animation-iteration-count: 1;
+  clip-path: inset(0 0 0 0);
+  margin-top: -10px;
 }
 
 .index form {
-  /* background: var(--LP-blue); */
+  /* background: var(--Sp-green); */
   display: flex;
   flex-flow: column wrap;
   /* gap: 20px; */
@@ -72,6 +87,7 @@ html {
 }
 
 .index form label {
+  font-family: CeraProMedium;
   color: black;
   margin: 0px 0 -5px 0;
   font-size: 14px;
@@ -151,18 +167,53 @@ html {
   font-size: .7em;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 .white-square {
+  display: block;
   position: absolute;
   top: 205px;
   left: 327px;
   width: 10px;
   height: 10px;
-  background-color: white;
+  background-color: red;
   z-index: 99;
-  animation: white-square;
+  animation: white-square 1s linear infinite;
 }
 
-@keyframes white-square {}
+@keyframes white-square {
+
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+}
 
 
 
@@ -187,11 +238,11 @@ MEDIA QUERIES /////////////////////////////////////////////////////
 */
 
 @media screen and (max-width: 768px) {
-  .index {
+  .container-connexion-box {
     transform: scale(150%);
   }
 
   .container-connexion h1 {
-    transform: translate(-50px, -90px);
+    transform: translate(0px, 0px);
   }
 }

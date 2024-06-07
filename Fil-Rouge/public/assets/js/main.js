@@ -15,3 +15,10 @@ toggleBtnIcon.addEventListener("click", function (event) {
     }
 });
 //////////////////////////////////////////////////////////
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    var indexElement = document.querySelector('.index');
+    indexElement.classList.add('show');
+});
