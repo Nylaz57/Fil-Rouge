@@ -5,6 +5,14 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
     if (!empty($_POST['Id_actualites'])) {
         require '../src/data/db-connect.php';
 
+        $requete = $connexion->prepare("SELECT image FROM `actualites` where Id_actualites = :Id_actualites");
+        $requete->execute([
+            'Id_actualites' => $_POST['Id_actualites'],
+        ]);
+        $imageActualites = $requete->fetch();
+
+        unlink('assets/img/actualites/' . $imageActualites['image']);
+
         $requete = $connexion->prepare("DELETE FROM actualites WHERE Id_actualites = :Id_actualites");
         $requete->execute([
             'Id_actualites' => $_POST['Id_actualites'],
