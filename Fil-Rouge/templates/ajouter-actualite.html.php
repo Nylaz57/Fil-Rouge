@@ -9,7 +9,7 @@
             echo htmlspecialchars($erreurs['titre']) ?>
         <div>
             <label for="image">Image :</label>
-            <input type="file" id="image" name="image" accept=".jpg,.png,.jpeg" size="2000000" required>
+            <input type="file" id="image" name="image" accept=".jpg,.png,.jpeg,.webp" size="2000000" required>
         </div>
         <?php if (!empty($erreurs['image']))
             echo htmlspecialchars($erreurs['image']) ?>

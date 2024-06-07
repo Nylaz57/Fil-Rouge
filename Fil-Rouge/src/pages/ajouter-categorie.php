@@ -35,6 +35,8 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
                             'Id_statut' => $statutCoche
                         ]);
                     }
+                    header('Location: /?page=categories');
+                    die;
                 } else {
                     $erreurs['nom'] = "Une catégorie existe déjà avec ce nom";
                 }

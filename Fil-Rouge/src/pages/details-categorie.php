@@ -9,14 +9,18 @@ if (isset($_SESSION['id'])) {
     $requete->execute(["id_famille" => $_GET['id']]);
     $categories = $requete->fetchAll();
 
-    if (!$categories) {
+    $requete = $connexion->prepare("SELECT * FROM famille WHERE id_famille=:id_famille");
+    $requete->execute(["id_famille" => $_GET['id']]);
+    $famille = $requete->fetch();
+
+    if (!$famille) {
         http_response_code(404);
         $titre = "Erreur 404";
         require '../templates/404.html.php';
         die;
     }
 
-    $titre = $categories[0]['nom_famille'];
+    $titre = $famille['nom_famille'];
 } else {
     http_response_code(401);
     $titre = "Erreur 401";

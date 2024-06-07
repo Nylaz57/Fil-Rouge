@@ -28,6 +28,7 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
                 'image/jpeg',
                 'image/jpg',
                 'image/png',
+                'image/webp',
             ];
             if (
                 in_array(mime_content_type($_FILES['image']['tmp_name']), $fichiersAutorises)
@@ -36,7 +37,7 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
                 if ($_FILES['image']['size'] < 2000000 && $_FILES['image']['error'] == 0) {
 
                     $nouveauNom = md5($_FILES['image']['name']) . '.' . pathinfo($_FILES['image']['name'])['extension'];
-                    move_uploaded_file($_FILES['image']['tmp_name'], 'img/' . $nouveauNom);
+                    move_uploaded_file($_FILES['image']['tmp_name'], 'assets/img/actualites/' . $nouveauNom);
                 } else {
                     $erreurs['image'] = "Le fichier est trop volumineux (> à 2 Mo).";
                 }

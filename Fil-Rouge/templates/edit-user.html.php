@@ -50,6 +50,7 @@
         </div>
         <div>
             <input type="submit" name="valider" value="Valider">
+            <a href="/?page=gestion-users">Annuler</a>
         </div>
     </form>
 <?php } ?>

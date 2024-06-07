@@ -9,7 +9,7 @@
             echo htmlspecialchars($erreurs['titre']) ?>
         <div>
             <label for="image">Remplacer l'image :</label>
-            <input type="file" id="image" name="image" accept=".jpg,.png,.jpeg" size="2000000">
+            <input type="file" id="image" name="image" accept=".jpg,.png,.jpeg,.webp" size="2000000">
             <input type="hidden" name="image_actuelle" value="<?php echo htmlspecialchars($actualite['image']); ?>">
         </div>
         <?php if (!empty($erreurs['image']))

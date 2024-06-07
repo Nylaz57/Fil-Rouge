@@ -19,28 +19,30 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($utilisateurs as $utilisateur) { ?>
-                <tr>
-                    <td><?php echo isset($utilisateur['Id_utilisateur']) ? htmlspecialchars($utilisateur['Id_utilisateur']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['nom_statut']) ? htmlspecialchars($utilisateur['nom_statut']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['nom_utilisateur']) ? htmlspecialchars($utilisateur['nom_utilisateur']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['prenom']) ? htmlspecialchars($utilisateur['prenom']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['email']) ? htmlspecialchars($utilisateur['email']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['telephone']) ? htmlspecialchars($utilisateur['telephone']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['adresse']) ? htmlspecialchars($utilisateur['adresse']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['code_postal']) ? htmlspecialchars($utilisateur['code_postal']) : '' ?></td>
-                    <td><?php echo isset($utilisateur['ville']) ? htmlspecialchars($utilisateur['ville']) : '' ?></td>
-                    <td>
-                        <a href="/?page=edit-user&id=<?php echo htmlspecialchars($utilisateur['Id_utilisateur']) ?>">Modifier</a>
-                    </td>
-                    <td>
-                        <form action="/?page=delete-user" method="POST">
-                            <input type="hidden" name="Id_utilisateur" value="<?php echo htmlspecialchars($utilisateur['Id_utilisateur']) ?>" />
-                            <button type="submit">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
-            <?php } ?>
+            <?php foreach ($utilisateurs as $utilisateur) {
+                if ($utilisateur['Id_statut'] != 4) { ?>
+                    <tr>
+                        <td><?php echo isset($utilisateur['Id_utilisateur']) ? htmlspecialchars($utilisateur['Id_utilisateur']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['nom_statut']) ? htmlspecialchars($utilisateur['nom_statut']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['nom_utilisateur']) ? htmlspecialchars($utilisateur['nom_utilisateur']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['prenom']) ? htmlspecialchars($utilisateur['prenom']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['email']) ? htmlspecialchars($utilisateur['email']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['telephone']) ? htmlspecialchars($utilisateur['telephone']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['adresse']) ? htmlspecialchars($utilisateur['adresse']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['code_postal']) ? htmlspecialchars($utilisateur['code_postal']) : '' ?></td>
+                        <td><?php echo isset($utilisateur['ville']) ? htmlspecialchars($utilisateur['ville']) : '' ?></td>
+                        <td>
+                            <a href="/?page=edit-user&id=<?php echo htmlspecialchars($utilisateur['Id_utilisateur']) ?>">Modifier</a>
+                        </td>
+                        <td>
+                            <form action="/?page=delete-user" method="POST">
+                                <input type="hidden" name="Id_utilisateur" value="<?php echo htmlspecialchars($utilisateur['Id_utilisateur']) ?>" />
+                                <button type="submit">Supprimer</button>
+                            </form>
+                        </td>
+                    </tr>
+            <?php }
+            } ?>
 
             <?php if (empty($utilisateur)) { ?>
                 <tr>

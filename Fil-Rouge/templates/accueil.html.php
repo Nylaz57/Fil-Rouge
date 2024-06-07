@@ -9,7 +9,7 @@
 
         <p><?php echo htmlspecialchars($actualite['contenu']) ?></p>
 
-        <img class="img-actualite" src="img/<?php echo htmlspecialchars($actualite['image']) ?>" alt="">
+        <img class="img-actualite" src="assets/img/actualites/<?php echo htmlspecialchars($actualite['image']) ?>" alt="">
 
         <p>Publié par <?php echo htmlspecialchars($actualite['nom_utilisateur']) . " " . htmlspecialchars($actualite['prenom']) ?>
             , le <?php echo htmlspecialchars(date('d/m/Y - H:i:s', strtotime($actualite['date_creation']))) ?></p>
@@ -22,7 +22,10 @@
             </form>
 <?php }
     }
+
     if (!empty($erreurs)) {
-        echo htmlspecialchars($erreurs);
+        foreach ($erreurs as $erreur) {
+            echo htmlspecialchars($erreur) . '<br>';
+        }
     }
 }

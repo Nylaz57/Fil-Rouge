@@ -5,7 +5,7 @@ if (isset($_SESSION['id'])) {
     $erreurs = [];
     require "../src/data/db-connect.php";
 
-    $requete = $connexion->query("SELECT * FROM actualites JOIN utilisateur ON actualites.Id_utilisateur = utilisateur.Id_utilisateur");
+    $requete = $connexion->query("SELECT * FROM actualites JOIN utilisateur ON actualites.Id_utilisateur = utilisateur.Id_utilisateur ORDER BY `actualites`.`Id_actualites` DESC; ");
 
     $actualites = $requete->fetchAll();
 
@@ -14,8 +14,6 @@ if (isset($_SESSION['id'])) {
     }
 
     $titre = "Accueil";
-
-    
 } else {
     http_response_code(401);
     $titre = "Erreur 401";
