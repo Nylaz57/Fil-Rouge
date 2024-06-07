@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MNS LOC - <?= $titre ?? '' ?> </title>
   <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <header>
   <?php
@@ -22,7 +23,7 @@
       <a href="?page=profil&id=<?php echo htmlspecialchars($_SESSION['id']) ?> ">Mon profil</a>
       <a href="?page=deconnexion">Déconnexion</a>
     </nav>
-  <?php
+    <?php
   } ?>
 </header>
 
@@ -30,6 +31,8 @@
 <body>
   <?php require "$page.html.php" ?>
 
+
+  <script src="../public/assets/js/main.js"></script>
 </body>
 
 </html>

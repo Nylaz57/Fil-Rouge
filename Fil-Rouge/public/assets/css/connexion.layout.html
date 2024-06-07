@@ -28,7 +28,11 @@
                         <span class="icon-mdp"></span>
                     </div>
 
-                    <div class="index-error"></div>
+                    <div class="index-error">
+                        <?php if (!empty($erreurs)) {
+                            echo htmlspecialchars("L'adresse mail ou le mot de passe est incorrect");
+                        } ?>
+                    </div>
 
                     <hr class="hr-connexion">
                     <button type="submit" name="bouton-connexion">Se connecter</button>

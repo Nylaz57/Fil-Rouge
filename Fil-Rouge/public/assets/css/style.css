@@ -18,7 +18,7 @@ html {
   align-items: center;
   flex-flow: column wrap;
   height: 100vh;
-  background: var(--Sp-green);
+  background: var(--my-blue);
   font-family: CeraProBold;
 
 }
@@ -29,7 +29,6 @@ html {
 
 .container-connexion h1 {
   color: var(--PV-white);
-  /* filter: brightness(300%) grayscale(66%); */
   padding: 0;
   margin-bottom: 3px;
   font-family: CeraProLight;
@@ -71,19 +70,16 @@ html {
   min-height: 353px;
   max-height: 353px;
   position: relative;
-  animation: welcome 3s linear;
+  /* animation: welcome 3s linear; */
   animation-iteration-count: 1;
   clip-path: inset(0 0 0 0);
   margin-top: -10px;
 }
 
 .index form {
-  /* background: var(--Sp-green); */
   display: flex;
   flex-flow: column wrap;
-  /* gap: 20px; */
   background: none;
-  /* animation: toggleLeft 1s ease-in infinite; */
 }
 
 .index form label {
@@ -136,7 +132,7 @@ html {
 }
 
 .index button {
-  background-color: var(--Sp-green);
+  background-color: var(--my-blue);
   color: var(--PV-white);
   padding: 10px;
   font-family: CeraProMedium;
@@ -169,55 +165,13 @@ html {
 
 
 
-
-
-
-
-
-
-
-
-
-
-.white-square {
-  display: block;
-  position: absolute;
-  top: 205px;
-  left: 327px;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  z-index: 99;
-  animation: white-square 1s linear infinite;
+.index-error #index-error-message {
+  font-family: CeraProMedium;
+  font-size: 12px;
+  display: none;
+  color: red;
+  margin: -6px 0 -40px 0;
 }
-
-@keyframes white-square {
-
-  0% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  60% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0;
-  }
-
-}
-
-
-
-
 
 /* 
 ANIMATION LAUNCHER /////////////////////////////////////////////////////
@@ -237,7 +191,7 @@ ANIMATION LAUNCHER /////////////////////////////////////////////////////
 MEDIA QUERIES /////////////////////////////////////////////////////
 */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) and (min-height: 768px) {
   .container-connexion-box {
     transform: scale(150%);
   }
