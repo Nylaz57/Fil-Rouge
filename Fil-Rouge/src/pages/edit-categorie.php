@@ -22,22 +22,43 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
     $statutFamille = $requete->fetchAll();
 
     if (isset($_POST['validation'])) {
-
         $erreurs = [];
 
-        if (empty($_POST['famille'])) {
-            $erreurs['famille'] = "Le nom est obligatoire";
-        }
+        if (isset($_POST['statut'])) {
+            $statutCoches = $_POST['statut'];
+            $statutCoches[] = 4;
 
-        if (empty($erreurs)) {
+            if (empty($_POST['famille'])) {
+                $erreurs['famille'] = "Le nom est obligatoire";
+            }
 
-            $requete = $connexion->prepare("UPDATE famille SET nom_famille = :nom_famille WHERE Id_famille=:Id_famille");
-            $requete->execute([
-                'nom_famille' => $_POST['famille'],
-                'Id_famille' => $_GET['id']
-            ]);
-            header('Location: /?page=categories');
-            die;
+            if (empty($erreurs)) {
+
+                $requete = $connexion->prepare("UPDATE famille SET nom_famille = :nom_famille WHERE Id_famille=:Id_famille");
+                $requete->execute([
+                    'nom_famille' => $_POST['famille'],
+                    'Id_famille' => $_GET['id']
+                ]);
+
+
+                $requete = $connexion->prepare("DELETE FROM statut_famille WHERE Id_famille = :Id_famille");
+                $requete->execute([
+
+                    'Id_famille' => $_GET['id']
+                ]);
+
+                $requete = $connexion->prepare("INSERT INTO statut_famille (Id_statut, Id_famille) VALUES (:Id_statut, :Id_famille)");
+                foreach ($statutCoches as $statutCoche) {
+                    $requete->execute([
+                        'Id_famille' => $_GET['id'],
+                        'Id_statut' => $statutCoche
+                    ]);
+                }
+                header('Location: /?page=categories');
+                die;
+            }
+        } else {
+            $erreurs['statut'] = "Statut manquant !";
         }
     }
 } elseif (isset($_SESSION['id']) && $_SESSION['statut'] != 4) {

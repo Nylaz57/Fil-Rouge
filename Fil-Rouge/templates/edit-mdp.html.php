@@ -7,7 +7,7 @@
         </div>
         <div>
             <?php if (!empty($erreurs['old-password'])) {
-                echo $erreurs['old-password'];
+                echo htmlspecialchars($erreurs['old-password']);
             } ?>
         </div>
         <div>

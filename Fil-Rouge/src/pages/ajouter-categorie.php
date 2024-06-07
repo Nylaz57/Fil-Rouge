@@ -35,7 +35,6 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
                             'Id_statut' => $statutCoche
                         ]);
                     }
-
                 } else {
                     $erreurs['nom'] = "Une catégorie existe déjà avec ce nom";
                 }

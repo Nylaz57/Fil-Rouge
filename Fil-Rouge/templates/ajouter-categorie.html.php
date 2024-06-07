@@ -24,8 +24,9 @@
 
 <?php
     if (!empty($erreurs)) {
-        echo $erreurs['nom'];
+        foreach ($erreurs as $erreur) {
+            echo htmlspecialchars($erreur) . '<br>';
+        }
     }
-    var_dump($_POST);
 }
     // Statuts stockés dans un tableau

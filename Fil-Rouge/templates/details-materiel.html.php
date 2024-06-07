@@ -1,6 +1,6 @@
 <?php if (isset($_SESSION['id'])) { ?>
 
-    <h1><?php echo $modeles[0]['nom_modele'] ?></h1>
+    <h1><?php echo htmlspecialchars($modeles[0]['nom_modele']) ?></h1>
 
     <img class="img-modele" src="<?php echo htmlspecialchars($modeles[0]['photo_modele']) ?>" alt="">
     <form action="" method="post">
@@ -33,7 +33,7 @@
     <ul>
         <?php foreach ($modeles as $modele) { ?>
             <li>
-                <td><?php echo $modele['detail_caracteristique'] ?></td>
+                <td><?php echo htmlspecialchars($modele['detail_caracteristique']) ?></td>
             </li>
         <?php } ?>
     </ul>

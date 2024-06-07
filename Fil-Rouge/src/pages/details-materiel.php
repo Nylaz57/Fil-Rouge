@@ -12,6 +12,12 @@ if (isset($_SESSION['id'])) {
     $requete->execute(["modele" => $_GET['id']]);
     $appareils = $requete->fetchAll();
 
+    if (!$modeles) {
+        http_response_code(404);
+        $titre = "Erreur 401";
+        require '../templates/404.html.php';
+        die;
+    }
     $titre = $modeles[0]['nom_modele'];
     // Date d'aujourd'hui format américain 
     $auj = date("Y-m-d");

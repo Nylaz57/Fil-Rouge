@@ -29,8 +29,6 @@
                     <td><?php echo isset($location['date_retour']) ? htmlspecialchars($location['date_retour']) : '' ?></td>
                     <td><?php echo isset($location['numero_serie']) ? htmlspecialchars($location['numero_serie']) : '' ?></td>
                     <td><?php echo isset($location['nom_modele']) ? htmlspecialchars($location['nom_modele']) : '' ?></td>
-
-
                 </tr>
             <?php } ?>
 
