@@ -19,48 +19,32 @@ toggleBtnIcon.addEventListener("click", function (event) {
 /////////////////////////////
 // CONTROLE DU FORMULAIRE DE CONNEXION
 const boutonConnexion = document.querySelector('#bouton-connexion');
+const inputEmail = document.querySelector('#email');
 const errorMessage = document.querySelector('#index-error-message');
 boutonConnexion.addEventListener('click', (event) => {
 
 
-    // errorMessage.style.display = 'block';
-    // errorMessage.innerHTML = "mot de passe incorrecte";
-    // event.preventDefault();
-
-
-});
-//////////////////////////////////////////////////////////
-
-
-
-
-
-/////////////////////////////
-// VERIFICATION CORRESPONDANCE EMAIL / BDD
-const verificationMail = document.querySelector('#email');
-verificationMail.addEventListener('blur', () => {
-    // verificationMail.style.backgroundColor = 'red';
-
-    fetch("../src/pages/controle_user.php?email=" + verificationMail.value)
+    fetch("../src/pages/controle_user.php?email=" + inputEmail.value)
         .then(function (response) {
             return response.json();
         })
         .then(function (response) {
             if (response[0].nb !== 1) {
-                // this.preventDefault();
-                verificationMail.style.backgroundColor = "var(--MSX-medium-red)";
+                event.preventDefault();
+                inputEmail.style.backgroundColor = "var(--MSX-medium-red)";
+                inputEmail.placeholder = "ex: john.doe@email.fr";
+                inputMdp.style.backgroundColor = "var(--MSX-medium-red)";
                 console.log(response[0].nb);
                 // Le mail existe déjà
                 errorMessage.style.display = 'block';
                 errorMessage.innerHTML = "Adresse ou mot de passe introuvable";
                 this.value = "";
-                if (verificationMail.addEventListener('focus', function () {
+                if (inputEmail.addEventListener('focus', function () {
                     errorMessage.innerHTML = "";
                 }));
-            } else {
-                verificationMail.style.backgroundColor = "var(--Sp-green)";
             }
         });
-
 });
 //////////////////////////////////////////////////////////
+
+console.log('HELLOWORLD');

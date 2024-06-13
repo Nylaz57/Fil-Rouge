@@ -1,8 +1,8 @@
+/* PAGE CONNEXION -> index.html.php*/
 /* PAGE CONNEXION */
 /* PAGE CONNEXION */
 /* PAGE CONNEXION */
-/* PAGE CONNEXION */
-/* PAGE CONNEXION */
+/* PAGE CONNEXION -> main.js */
 
 @import url(./MEGASTYLE.css);
 
@@ -70,7 +70,7 @@ html {
   min-height: 353px;
   max-height: 353px;
   position: relative;
-  /* animation: welcome 3s linear; */
+  animation: welcome 3s linear;
   animation-iteration-count: 1;
   clip-path: inset(0 0 0 0);
   margin-top: -10px;
@@ -107,14 +107,14 @@ html {
 }
 
 .icon-container {
-  position: relative
+  position: relative;
 }
 
 .icon-container .icon-mdp {
   position: absolute;
-  width: 32px;
-  height: 32px;
-  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  background-color: white;
   background-image: url(../../img/icons/visibility_off_FILL0_wght400_GRAD0_opsz24.svg);
   background-size: 60%;
   background-position: 6px 6px;
@@ -123,8 +123,12 @@ html {
   right: 2px;
   transform: translateY(-50%);
   cursor: pointer;
-  border-left: 2px solid var(--Sp-black);
+  border: 2px solid var(--Sp-black);
   z-index: 1;
+}
+
+#mdp {
+  width: 114px;
 }
 
 .index form label:nth-of-type(1) {
@@ -163,8 +167,6 @@ html {
   font-size: .7em;
 }
 
-
-
 .index-error #index-error-message {
   font-family: CeraProMedium;
   font-size: 12px;
@@ -172,6 +174,170 @@ html {
   color: red;
   margin: -6px 0 -40px 0;
 }
+
+
+
+
+/* HEADER -> layout.html.php */
+/* HEADER */
+/* HEADER NAVBAR */
+/* HEADER */
+/* HEADER -> accueil.js */
+
+#header-layout {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  border: 8px solid black;
+  padding: 0 20px;
+  background-color: var(--PV-white);
+}
+
+
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a {
+  margin-right: 15px;
+  /* Espace entre les éléments à gauche */
+}
+
+.nav-right {
+  margin-left: auto;
+  /* Pousse le groupe nav-right à droite */
+}
+
+#header-nav-inline {
+  display: inline-block;
+  justify-content: flex-end;
+}
+
+nav a,
+nav span {
+  text-decoration: none;
+  font-family: CeraProMedium;
+  color: var(--Sp-black);
+  text-transform: uppercase;
+  font-size: .5em;
+}
+
+nav span {
+  font-family: CeraProLight;
+}
+
+
+
+/* PAGE ACCUEIL -> accueil.html.php */
+/* PAGE ACCUEIL */
+/* PAGE ACCUEIL */
+/* PAGE ACCUEIL */
+/* PAGE ACCUEIL -> accueil.js */
+
+html {
+  background-color: red;
+}
+
+#accueil-layout {
+  /* margin: -22px 0px 0px 0px; */
+  padding: 0;
+  background-color: var(--my-blue);
+  height: auto;
+}
+
+#accueil-layout h1 {
+  color: var(--PV-white);
+  font-family: CeraProLight;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0;
+  padding: 100px;
+}
+
+
+#accueil-layout a {
+  page: lien;
+}
+
+@page lien {
+  color: red;
+  background-color: red;
+}
+
+
+
+.actu-card {
+  border-radius: 1px;
+  padding: 40px 20px 20px 20px;
+  background-color: var(--PV-white);
+  background-image: url(../../img/box-actu-65x54.png);
+  /* box-test-5.png Original Value : 32x54px */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  width: 400px;
+  min-height: 353px;
+  max-height: 353px;
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  /* animation: welcome 3s linear; */
+  animation-iteration-count: 1;
+  clip-path: inset(0 0 0 0);
+  margin: 20px;
+  font-family: CeraProLight;
+}
+
+/* .actu-card img {
+  display: none;
+} */
+
+/* .cards {
+  background-color: yellow;
+} */
+
+.card-text-overflow {
+  margin: 0;
+  max-height: 70px;
+  white-space: wrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.img-actualite {
+  width: 200px;
+  height: auto;
+  max-height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 
 ANIMATION LAUNCHER /////////////////////////////////////////////////////
