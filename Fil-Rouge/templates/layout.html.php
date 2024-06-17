@@ -13,11 +13,11 @@
 <?php
 if (isset($_SESSION['id'])) { ?>
   <header id="header-layout">
-        <nav>
-            <div class="nav-left">
-                <a href="?page=accueil">Accueil</a>
-                <a href="?page=categories">Materiel</a>
-           <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
+    <nav>
+      <div class="nav-left">
+        <a href="?page=accueil">Accueil</a>
+        <a href="?page=categories">Materiel</a>
+        <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
           <a href="?page=gestion-users">Utilisateurs</a>
           <a href="?page=gestion-loc">Locations</a>
         <?php } ?>

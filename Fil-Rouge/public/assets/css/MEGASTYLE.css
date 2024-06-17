@@ -88,8 +88,20 @@
     --3310-width: 84px;
     --3310-height: 48px;
 
+    /*
+    Pixel background
+    */
 
+    --width-image-box-min: 32px;
+    --width-image-box-medium: 64px;
+    --width-image-box-max: 128px;
 
+    --width-image-box-min-resize: 200px;
+    --width-image-box-medium-resize: 400px;
+    --width-image-box-max-resize: 800px;
+
+    --height-image-box-min-resize: 176px;
+    --height-image-box-resize: 352px; /* 54px */
 }
 
 
