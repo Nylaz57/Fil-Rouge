@@ -15,7 +15,7 @@ if (isset($_SESSION['id'])) {
     $titre = $modeles[0]['nom_modele'];
     // Date d'aujourd'hui format américain 
     $auj = date("Y-m-d");
-    // On Convertit la date en chaine de caractere
+    // On transforme la date en timestamp pour le calcul de dates
     $aujLoc = strtotime(date("Y-m-d"));
     // 0,0,0 corresponds à l'heure , minute , seconde
     $anneProchaine  = mktime(0, 0, 0, date("m"),   date("d"),   date("Y") + 1);
@@ -25,6 +25,18 @@ if (isset($_SESSION['id'])) {
 
         $debutLoc = strtotime($_POST['loc-debut']);
         $finLoc = strtotime($_POST['loc-fin']);
+        // On retourne un tableau associatif avec differentes informations des dates
+        $jourDebutLoc = getdate($debutLoc);
+        $jourFinLoc = getdate($finLoc);
+
+
+        if ($jourDebutLoc['weekday'] == 'Saturday' || $jourDebutLoc['weekday'] == 'Sunday') {
+            $erreurs['loc-debut'] = "Fermé le samedi et le dimanche , merci de choisir une autre date de début de location";
+        }
+
+        if ($jourFinLoc['weekday'] == 'Saturday' || $jourFinLoc['weekday'] == 'Sunday') {
+            $erreurs['loc-fin'] = "Fermé le samedi et le dimanche , merci de choisir une autre date de fin de location";
+        }
 
         if (empty($debutLoc)) {
             $erreurs['loc-debut'] = "Pas de date de debut de location";
@@ -73,8 +85,6 @@ AND (
                     "Id_location" => $idLocation,
                     "Id_appareil" => $modelesLoc['Id_appareil']
                 ]);
-                header("Location: /?page=accueil");
-                die;
             } else {
                 $erreurs['Location'] = "Aucun appareil disponible pour ces dates";
             }

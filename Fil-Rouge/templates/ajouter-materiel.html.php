@@ -35,4 +35,3 @@
         }
     }
 }
-    // Statuts stockés dans un tableau
