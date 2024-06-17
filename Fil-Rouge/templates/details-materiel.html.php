@@ -7,7 +7,7 @@
 
     <a href="<?php echo $modeles[0]['notice_modele']; ?>" target="_blank">Voir le manuel d'utilisation</a>
 
-    <form action="" method=" post">
+    <form action="" method="POST">
 
         <label>Debut de la location :
             <input type="date" value="" name="loc-debut" min="<?php echo htmlspecialchars($auj) ?>" max="<?php echo htmlspecialchars(date("Y-m-d", $anneProchaine)) ?>" required>

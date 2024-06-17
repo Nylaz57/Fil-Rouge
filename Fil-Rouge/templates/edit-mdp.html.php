@@ -2,7 +2,7 @@
     <h1>Changer de mot de passe :</h1>
     <form method="POST">
         <div>
-            <label>Votre mot de passe :</label>
+            <label>Votre mot de passe actuel :</label>
             <input type="password" name="old-password" required>
         </div>
         <div>

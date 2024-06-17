@@ -9,6 +9,12 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
     $requete->execute(["id" => $_GET['id']]);
     $actualite = $requete->fetch();
 
+    if (!$actualite) {
+        http_response_code(404);
+        $titre = "Erreur 404";
+        require '../templates/404.html.php';
+        die;
+    }
 
     if (isset($_POST['validation'])) {
 

@@ -12,12 +12,6 @@ if (isset($_SESSION['id'])) {
     $requete->execute(["modele" => $_GET['id']]);
     $appareils = $requete->fetchAll();
 
-    if (!$modeles) {
-        http_response_code(404);
-        $titre = "Erreur 401";
-        require '../templates/404.html.php';
-        die;
-    }
     $titre = $modeles[0]['nom_modele'];
     // Date d'aujourd'hui format américain 
     $auj = date("Y-m-d");
@@ -47,7 +41,6 @@ if (isset($_SESSION['id'])) {
 
         if (empty($erreurs)) {
 
-            require '../src/data/db-connect.php';
             $requete = $connexion->prepare("SELECT * 
 FROM location_appareil 
 JOIN location ON location.Id_location = location_appareil.Id_location 
@@ -60,11 +53,8 @@ AND (
 );");
             $requete->execute([
                 "Id_modele" => $_GET['id'],
-                "debutLoc" => date("Y-m-d", $debutLoc),
-                "finLoc" => date(
-                    "Y-m-d",
-                    $finLoc
-                )
+                "debutLoc" => $debutLoc,
+                "finLoc" => $finLoc
             ]);
             $modelesLoc = $requete->fetch();
 

@@ -14,6 +14,12 @@
         <?php if (!empty($erreurs['image']))
             echo htmlspecialchars($erreurs['image']) ?>
         <div>
+            <label for="notice">Notice (facultatif) :</label>
+            <input type="file" id="notice" name="notice" accept=".pdf" size="2000000">
+        </div>
+        <?php if (!empty($erreurs['image']))
+            echo htmlspecialchars($erreurs['notice']) ?>
+        <div>
             <label for="description">Description :</label>
         </div>
         <div>
