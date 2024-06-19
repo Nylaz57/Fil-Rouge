@@ -46,6 +46,7 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
             }
 
             if (empty($erreurs)) {
+                //Fuseau horaire Paris (UTC+2)
                 date_default_timezone_set('Europe/Paris');
                 $requete = $connexion->prepare("INSERT INTO actualites (titre,image,contenu,date_creation,id_utilisateur) VALUES (:titre,:image,:contenu,:date_creation,:id_utilisateur)");
                 $requete->execute([

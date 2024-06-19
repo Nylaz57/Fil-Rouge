@@ -6,8 +6,7 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
 
     require "../src/data/db-connect.php";
 
-    $requete = $connexion->query("SELECT * FROM `location_appareil` JOIN location ON location.Id_location = location_appareil.Id_location JOIN appareil ON appareil.Id_appareil = location_appareil.Id_appareil
-JOIN modele ON modele.Id_modele = appareil.Id_modele JOIN utilisateur ON utilisateur.Id_utilisateur = location.Id_utilisateur;");
+    $requete = $connexion->query("SELECT * FROM `location_appareil` JOIN location ON location.Id_location = location_appareil.Id_location JOIN appareil ON appareil.Id_appareil = location_appareil.Id_appareil JOIN modele ON modele.Id_modele = appareil.Id_modele JOIN utilisateur ON utilisateur.Id_utilisateur = location.Id_utilisateur JOIN modele_etat ON modele_etat.Id_appareil = appareil.Id_appareil JOIN etat ON etat.Id_etat = modele_etat.Id_etat");
     $locations = $requete->fetchAll();
 } elseif (isset($_SESSION['id']) && $_SESSION['statut'] != 4) {
     http_response_code(403);

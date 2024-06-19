@@ -14,6 +14,7 @@
                 <th>Retour location</th>
                 <th>Numéro de série</th>
                 <th>Modèle</th>
+                <th>Etat avant prêt</th>
 
             </tr>
         </thead>
@@ -29,6 +30,7 @@
                     <td><?php echo isset($location['date_retour']) ? htmlspecialchars(date('d/m/Y', strtotime(($location['date_retour'])))) : '' ?></td>
                     <td><?php echo isset($location['numero_serie']) ? htmlspecialchars($location['numero_serie']) : '' ?></td>
                     <td><?php echo isset($location['nom_modele']) ? htmlspecialchars($location['nom_modele']) : '' ?></td>
+                    <td><?php echo isset($location['nom_etat']) ? htmlspecialchars($location['nom_etat']) : '' ?></td>
                 </tr>
             <?php } ?>
 

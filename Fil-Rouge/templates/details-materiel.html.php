@@ -4,8 +4,9 @@
 
     <img class="img-modele" src="<?php echo htmlspecialchars($modeles[0]['photo_modele']) ?>" alt="">
 
-
-    <a href="<?php echo $modeles[0]['notice_modele']; ?>" target="_blank">Voir le manuel d'utilisation</a>
+    <?php if ($modeles[0]['notice_modele'] != null) { ?>
+        <a href="<?php echo htmlspecialchars($modeles[0]['notice_modele']); ?>" target="_blank">Voir le manuel d'utilisation</a>
+    <?php } ?>
 
     <form action="" method="POST">
 
@@ -33,7 +34,8 @@
     <ul>
         <?php foreach ($modeles as $modele) { ?>
             <li>
-                <td><?php echo htmlspecialchars($modele['detail_caracteristique']) ?></td>
+                <td><?php echo htmlspecialchars($modele['nom_caracteristique']) ?></td>
+                <td><?php echo htmlspecialchars($modele['details_caracteristique']) ?></td>
             </li>
         <?php } ?>
     </ul>

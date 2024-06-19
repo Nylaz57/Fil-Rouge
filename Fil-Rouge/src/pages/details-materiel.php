@@ -4,7 +4,8 @@ if (isset($_SESSION['id'])) {
 
     require "../src/data/db-connect.php";
 
-    $requete = $connexion->prepare("SELECT modele.Id_modele, nom_modele, detail_caracteristique , notice_modele , photo_modele FROM modele_caracteristique JOIN modele ON modele.Id_modele = modele_caracteristique.Id_modele JOIN caracteristique ON caracteristique.Id_caracteristique=modele_caracteristique.Id_caracteristique WHERE modele.Id_modele= :modele ORDER BY `caracteristique`.`detail_caracteristique` ASC");
+    $requete = $connexion->prepare("SELECT * FROM modele_caracteristique_details JOIN modele ON modele.Id_modele = modele_caracteristique_details.Id_modele JOIN caracteristique ON caracteristique.Id_caracteristique = modele_caracteristique_details.Id_caracteristique JOIN details_caracteristique ON details_caracteristique.Id_details_caracteristique = modele_caracteristique_details.Id_details_caracteristique WHERE modele.Id_modele= :modele  
+ORDER BY `caracteristique`.`nom_caracteristique` ASC");
     $requete->execute(["modele" => $_GET['id']]);
     $modeles = $requete->fetchAll();
 
@@ -17,15 +18,16 @@ if (isset($_SESSION['id'])) {
     $auj = date("Y-m-d");
     // On transforme la date en timestamp pour le calcul de dates
     $aujLoc = strtotime(date("Y-m-d"));
-    // 0,0,0 corresponds à l'heure , minute , seconde
-    $anneProchaine  = mktime(0, 0, 0, date("m"),   date("d"),   date("Y") + 1);
+    // Corresponds en timestamp à l'heure , minute , seconde , mois , jour , année + 1
+    $anneProchaine  = mktime(0, 0, 0, date("m"), date("d"), date("Y") + 1);
 
     if (isset($_POST['location'])) {
         $erreurs = [];
 
         $debutLoc = strtotime($_POST['loc-debut']);
         $finLoc = strtotime($_POST['loc-fin']);
-        // On retourne un tableau associatif avec differentes informations des dates
+
+        // On retourne un tableau associatif avec differentes informations des dates debut et date fin
         $jourDebutLoc = getdate($debutLoc);
         $jourFinLoc = getdate($finLoc);
 
@@ -62,7 +64,7 @@ AND (
     (date_debut NOT BETWEEN :debutLoc AND  :finLoc 
     AND date_fin NOT BETWEEN :debutLoc AND :finLoc) 
     OR date_debut IS NULL
-);");
+)");
             $requete->execute([
                 "Id_modele" => $_GET['id'],
                 "debutLoc" => $debutLoc,
@@ -85,6 +87,8 @@ AND (
                     "Id_location" => $idLocation,
                     "Id_appareil" => $modelesLoc['Id_appareil']
                 ]);
+                header('Location: /?page=accueil');
+                die;
             } else {
                 $erreurs['Location'] = "Aucun appareil disponible pour ces dates";
             }
