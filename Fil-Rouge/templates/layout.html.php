@@ -17,6 +17,9 @@
       if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
         <a href="?page=gestion-users">Utilisateurs</a>
         <a href="?page=gestion-loc">Locations</a>
+      <?php }
+      if (isset($_SESSION['id']) && $_SESSION['statut'] != 4) { ?>
+        <a href="?page=locations">Mes locations</a>
       <?php } ?>
       <?php echo htmlspecialchars($_SESSION['prenom']) . " " . htmlspecialchars($_SESSION['nom_utilisateur']); ?>
       <a href="?page=profil&id=<?php echo htmlspecialchars($_SESSION['id']) ?> ">Mon profil</a>

@@ -6,7 +6,6 @@
     <table>
         <thead>
             <tr>
-                <th>Id utilisateur</th>
                 <th>Statut</th>
                 <th>Nom</th>
                 <th>Prénom</th>
@@ -22,7 +21,6 @@
             <?php foreach ($utilisateurs as $utilisateur) {
                 if ($utilisateur['Id_statut'] != 4) { ?>
                     <tr>
-                        <td><?php echo isset($utilisateur['Id_utilisateur']) ? htmlspecialchars($utilisateur['Id_utilisateur']) : '' ?></td>
                         <td><?php echo isset($utilisateur['nom_statut']) ? htmlspecialchars($utilisateur['nom_statut']) : '' ?></td>
                         <td><?php echo isset($utilisateur['nom_utilisateur']) ? htmlspecialchars($utilisateur['nom_utilisateur']) : '' ?></td>
                         <td><?php echo isset($utilisateur['prenom']) ? htmlspecialchars($utilisateur['prenom']) : '' ?></td>

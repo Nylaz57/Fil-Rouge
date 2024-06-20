@@ -1,5 +1,5 @@
 <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
-    <h1>Ajout d'une catégorie</h1>
+    <h1>Ajout d'un matériel</h1>
     <form action="" method="POST">
         <div>
             <label for="materiel">Nom nouveau matériel :</label>
