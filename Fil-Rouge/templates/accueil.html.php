@@ -1,12 +1,14 @@
 <!-- ADMIN INTERFACE -->
 
+<h1>Actualités</h1>
+<?php if (isset($_SESSION['id'])) { ?>
+    <a href="?page=ajouter-actualite">Nouvelle actualité</a>
+<?php } ?>
+
 <div id="accueil-layout">
     <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
-        <h1>Actualités</h1>
-        <?php if (isset($_SESSION['id'])) { ?>
-            <a href="?page=ajouter-actualite">Nouvelle actualité</a>
-        <?php }
 
+        <?php
         foreach ($actualites as $actualite) { ?>
             <main class="cards">
                 <section class="actu-card toast">

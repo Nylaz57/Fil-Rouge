@@ -3,7 +3,7 @@
     <div class="sidebar-material">
         <p>hello</p>
     </div>
-    
+
     <section class="material-container-card toast">
 
         <div class="material-body">
@@ -33,7 +33,7 @@
             </form>
         </div>
         <div class="material-description">
-            <h3>Description :</h3>
+            <h3>Description produit</h3>
 
             <ul>
                 <?php foreach ($modeles as $modele) { ?>

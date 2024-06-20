@@ -14,6 +14,7 @@
 if (isset($_SESSION['id'])) { ?>
   <header id="header-layout">
     <nav>
+
       <div class="nav-left">
         <a href="?page=accueil">Accueil</a>
         <a href="?page=categories">Materiel</a>
@@ -22,13 +23,14 @@ if (isset($_SESSION['id'])) { ?>
           <a href="?page=gestion-loc">Locations</a>
         <?php } ?>
       </div>
+
       <div class="nav-right">
         <span>
           <?php echo htmlspecialchars($_SESSION['prenom']) . " " . htmlspecialchars($_SESSION['nom_utilisateur']); ?>
         </span>
         <div id="header-nav-inline">
           <a href="?page=profil&id=<?php echo htmlspecialchars($_SESSION['id']) ?> ">Mon profil</a>
-          <a href="?page=deconnexion">Déconnexion</a>
+          <a href="?page=deconnexion">Deconnexion</a>
         </div>
       </div>
     </nav>

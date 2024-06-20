@@ -65,7 +65,7 @@ html {
   background-repeat: no-repeat;
   image-rendering: pixelated;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: var(--width-image-box-min-resize);
   min-height: var(--height-image-box-resize);
   max-height: var(--height-image-box-resize);
@@ -213,6 +213,19 @@ html {
   align-items: center;
 }
 
+.nav-left {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.nav-left a:hover {
+  color: white;
+  background-color: black;
+  transition: .3s;
+}
+
 .nav-left a,
 .nav-right a,
 .nav-right span {
@@ -247,6 +260,9 @@ nav span {
   padding: 0;
   background-color: var(--my-blue);
   height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
 }
 
 #accueil-layout h1 {
@@ -277,14 +293,13 @@ nav span {
   background-repeat: no-repeat;
   image-rendering: pixelated;
   box-sizing: border-box;
-  /* overflow: hidden; */
   width: 400px;
   min-height: var(--height-image-box-resize);
   max-height: var(--height-image-box-resize);
   position: relative;
   display: flex;
   flex-flow: column nowrap;
-  /* animation: welcome 3s linear; */
+  animation: welcome 3s linear;
   animation-iteration-count: 1;
   clip-path: inset(0 0 0 0);
   margin: 20px;
@@ -295,9 +310,10 @@ nav span {
   display: none;
 } */
 
-/* .cards {
-  background-color: yellow;
-} */
+.cards {
+  display: flex;
+  flex-flow: column nowrap;
+}
 
 .card-text-overflow {
   margin: 0;
@@ -308,9 +324,9 @@ nav span {
 }
 
 .img-actualite {
-  width: var(--width-image-box-min-resize);
+  width: auto;
   height: auto;
-  max-height: 100px;
+  max-width: 50%;
 }
 
 
@@ -320,24 +336,19 @@ nav span {
 /* PAGE MATERIEL */
 /* PAGE MATERIEL */
 
-html {
-  background: var(--Sp-green);
-}
 
 .material-container-card {
   display: flex;
   flex-flow: row nowrap;
-  position: fixed;
+  position: absolute;
   top: 20%;
   left: calc((100% - (var(--width-image-box-medium-resize) + var(--width-image-box-min-resize)) - 20px) - 25%);
   font-family: CeraProMedium;
-
 }
 
 .material-body {
   background-image: url(../../img/box-actu-65x54.png);
   background-size: 100% 100%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
   background-repeat: no-repeat;
   image-rendering: pixelated;
   box-sizing: border-box;
@@ -346,7 +357,9 @@ html {
   max-height: var(--height-image-box-resize);
   height: auto;
   background-color: var(--PV-white);
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
+  position: relative;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
 
 }
 
@@ -356,19 +369,42 @@ html {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   image-rendering: pixelated;
-  box-sizing: border-box;
   position: absolute;
-  top: 370px;
-  left: 200px;
+  top: 400px;
+  left: 50px;
   width: var(--width-image-box-medium-resize);
   height: var(--height-image-box-min-resize);
   padding: 20px 20px 20px 20px;
-
-
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
 }
+
+/* .material-body form::before {
+  content: '';
+  width: 142px;
+  height: 6px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+} */
+
+.material-description ul {
+  padding: 0;
+  margin: 0;
+}
+
+.material-description li {
+  font-family: CeraProLight;
+  font-size: .8rem;
+  margin-right: 20px;
+  list-style: none;
+  white-space: nowrap;
+}
+
 
 .material-body form h3 {
   color: red;
+  margin-top: 40px;
 }
 
 .material-location {
@@ -378,23 +414,55 @@ html {
 }
 
 .material-description {
+  position: relative;
+  background-color: white;
+  border: 6px solid black;
   border-radius: 1px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
-  padding: 20px;
-  background-color: transparent;
-  background-image: url(../../img/box-test-5.png);
-  /* box-test-5.png Original Value : 32x54px */
+  padding: 20px 20px 10px 20px;
+  margin: 80px 0 0 -10px;
+  max-height: 200px;
+  box-shadow: 10px 10px 0px rgba(0, 0, 0, 1);
+}
+
+/* .material-description::before {
+  content: '';
+  width: 6px;
+  height: 75px;
+  background-color: black;
+  position: absolute;
+  top: 245px;
+  left: 150px;
+} */
+
+/* .material-description::after {
+  content: '';
+  width: 30px;
+  height: 6px;
+  background-color: black;
+  position: absolute;
+  top: 120px;
+  left: -30px;
+} */
+
+.material-description h3 {
+  font-size: 24px;
+  padding: 0 0 20px 0;
+  margin: 0;
+}
+
+.material-description::before {
+  content: '';
+  width: 300px;
+  height: 200px;
+  transform: scale(40%) rotate(160deg);
+  z-index: 9999;
+  background-image: url(../../img/black-arrow.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   image-rendering: pixelated;
-  box-sizing: border-box;
-  overflow: hidden;
-  width: var(--width-image-box-min-resize);
-  min-height: var(--height-image-box-resize);
-  max-height: var(--height-image-box-resize);
-  font-size: .8rem;
-  /* display: none; */
-  margin-left: 20px;
+  position: absolute;
+  top: 250px;
+  left: 50px;
 }
 
 .img-modele {
@@ -403,8 +471,6 @@ html {
   margin: -15px 0px 10px 0px;
   padding-left: 50px;
 }
-
-
 
 .sidebar-material {
   background-color: red;
@@ -417,7 +483,7 @@ html {
   height: 528px;
   position: absolute;
   top: 20%;
-  left: 10%;
+  left: 5%;
 }
 
 .sidebar-material p {
@@ -425,6 +491,11 @@ html {
 }
 
 
+
+
+html {
+  background-color: var(--my-blue);
+}
 
 /* 
 ANIMATION LAUNCHER /////////////////////////////////////////////////////
