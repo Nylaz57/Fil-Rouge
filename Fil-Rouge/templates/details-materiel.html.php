@@ -10,9 +10,8 @@
             <h1><?php echo $modeles[0]['nom_modele'] ?></h1>
 
             <img class="img-modele" src="<?php echo htmlspecialchars($modeles[0]['photo_modele']) ?>" alt="">
+
             <form method="post">
-
-
 
                 <h3>Je choisis mes dates de location</h3>
 
@@ -38,7 +37,7 @@
             <ul>
                 <?php foreach ($modeles as $modele) { ?>
                     <li>
-                        <td><?php echo $modele['detail_caracteristique'] ?></td>
+                        <td><?php echo $modele['details_caracteristique'] ?></td>
                     </li>
                 <?php } ?>
             </ul>

@@ -10,5 +10,5 @@ if (isset($_SESSION['id'])) {
     $requete->execute([
         'Id_utilisateur' => $_SESSION['id']
     ]);
-    $utilisateurInfo = $query->fetch();
+    $utilisateurInfo = $requete->fetch();
 }

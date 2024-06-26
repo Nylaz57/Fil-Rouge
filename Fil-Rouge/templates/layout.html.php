@@ -6,7 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MNS LOC - <?= $titre ?? '' ?> </title>
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- DATATABLES IMPORT -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+  <script defer src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
+  <!-- JQUERY IMPORT -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
   <script defer src="../assets/js/accueil.js"></script>
+  <script defer src="../assets/js/main.js"></script>
 
 </head>
 
@@ -25,14 +33,12 @@ if (isset($_SESSION['id'])) { ?>
       </div>
 
       <div class="nav-right">
-        <span>
-          <?php echo htmlspecialchars($_SESSION['prenom']) . " " . htmlspecialchars($_SESSION['nom_utilisateur']); ?>
-        </span>
-        <div id="header-nav-inline">
-          <a href="?page=profil&id=<?php echo htmlspecialchars($_SESSION['id']) ?> ">Mon profil</a>
-          <a href="?page=deconnexion">Deconnexion</a>
-        </div>
+        <a
+          href="?page=profil&id=<?php echo htmlspecialchars($_SESSION['id']) ?> "><?php echo htmlspecialchars($_SESSION['prenom']) . " " . htmlspecialchars($_SESSION['nom_utilisateur']); ?></a>
+        <a href="?page=profil&id=<?php echo htmlspecialchars($_SESSION['id']) ?> ">Mon profil</a>
+        <a href="?page=deconnexion">Deconnexion</a>
       </div>
+
     </nav>
   </header>
   <?php
@@ -44,7 +50,7 @@ if (isset($_SESSION['id'])) { ?>
   <?php require "$page.html.php" ?>
 
 
-  <!-- <script src="../public/assets/js/main.js"></script> -->
+
 </body>
 
 </html>

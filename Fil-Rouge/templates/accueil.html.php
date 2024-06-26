@@ -1,8 +1,8 @@
 <!-- ADMIN INTERFACE -->
 
-<h1>Actualités</h1>
+<h1 class="title">Actualités</h1>
 <?php if (isset($_SESSION['id'])) { ?>
-    <a href="?page=ajouter-actualite">Nouvelle actualité</a>
+    <a href="?page=ajouter-actualite" title="Nouvelle actualité" class="addBtn"></a>
 <?php } ?>
 
 <div id="accueil-layout">
@@ -14,11 +14,11 @@
                 <section class="actu-card toast">
                     <h2><?php echo htmlspecialchars($actualite['titre']) ?></h2>
 
-                    <p class="card-text-overflow"><?php echo htmlspecialchars($actualite['contenu']) ?></p>
+                    <p class="card-text-overflow" title="<?php echo htmlspecialchars($actualite['contenu']) ?>"><?php echo htmlspecialchars($actualite['contenu']) ?></p>
 
-                    <img class="img-actualite" src="img/<?php echo htmlspecialchars($actualite['image']) ?>" alt="">
+                    <img class="img-actualite" src="assets/img/actualites/<?php echo htmlspecialchars($actualite['image']) ?>" alt="">
 
-                    <p>Publié par
+                    <p class="published-by">Publié par
                         <?php echo htmlspecialchars($actualite['nom_utilisateur']) . " " . htmlspecialchars($actualite['prenom']) ?>
                         , le <?php echo htmlspecialchars(date('d/m/Y - H:i:s', strtotime($actualite['date_creation']))) ?>
                     </p>

@@ -1,8 +1,8 @@
 <?php if (isset($_SESSION['id'])) { ?>
-    <h1>Matériel</h1>
+    <h1 class="title">Gestion du materiel</h1>
 
     <?php if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) { ?>
-        <a href="?page=ajouter-categorie"> Ajouter une catégorie </a>
+        <a href="?page=ajouter-categorie" title="Ajouter une catégorie" class="addBtn"></a>
     <?php } ?>
     <ul>
         <?php foreach ($categories as $categorie) { ?>

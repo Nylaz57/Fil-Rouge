@@ -6,7 +6,7 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
 
     require "../src/data/db-connect.php";
 
-    $requete = $connexion->query("SELECT * FROM utilisateur JOIN statut ON statut.Id_statut = utilisateur.Id_statut; ");
+    $requete = $connexion->query("SELECT * FROM utilisateur JOIN statut ON statut.Id_statut = utilisateur.Id_statut ");
     $utilisateurs = $requete->fetchAll();
 } elseif (isset($_SESSION['id']) && $_SESSION['statut'] != 4) {
     http_response_code(403);
