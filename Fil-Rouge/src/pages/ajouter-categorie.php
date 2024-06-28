@@ -35,6 +35,9 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
                             'Id_statut' => $statutCoche
                         ]);
                     }
+                    $nomModif = str_replace(' ', '-', $_POST['nom']);
+                    $nomModif = strtolower($nomModif);
+                    mkdir("assets/img/materiels/" . $nomModif);
                     header('Location: /?page=categories');
                     die;
                 } else {

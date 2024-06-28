@@ -46,4 +46,9 @@
             <input type="submit" name="valider" value="Valider">
         </div>
     </form>
-<?php } ?>
+<?php if (!empty($erreurs)) {
+        foreach ($erreurs as $erreur) {
+            echo htmlspecialchars($erreur) . '<br>';
+        }
+    }
+}

@@ -27,7 +27,7 @@ ORDER BY `caracteristique`.`nom_caracteristique` ASC");
         $debutLoc = strtotime($_POST['loc-debut']);
         $finLoc = strtotime($_POST['loc-fin']);
 
-        // On retourne un tableau associatif avec differentes informations des dates debut et date fin
+        // Je retourne un tableau associatif avec differentes informations des dates debut et date fin
         $jourDebutLoc = getdate($debutLoc);
         $jourFinLoc = getdate($finLoc);
 

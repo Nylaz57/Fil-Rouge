@@ -45,8 +45,17 @@ td {
   display: block;
 }
 
-/* 
 .img-actualite {
-  width: 100%;
-  max-width: 600px;
-} */
+  max-width: 350px;
+  border-radius: 15%;
+}
+
+.actualite {
+  display: flex;
+  margin-left: 10px;
+}
+
+.texte-actualite {
+  margin-left: 20px;
+
+}

@@ -6,11 +6,10 @@
 
     foreach ($actualites as $actualite) { ?>
         <h2><?php echo htmlspecialchars($actualite['titre']) ?></h2>
-
-        <p><?php echo htmlspecialchars($actualite['contenu']) ?></p>
-
-        <img class="img-actualite" src="assets/img/actualites/<?php echo htmlspecialchars($actualite['image']) ?>" alt="">
-
+        <div class="actualite">
+            <img class="img-actualite" src="assets/img/actualites/<?php echo htmlspecialchars($actualite['image']) ?>" alt="">
+            <p class="texte-actualite"><?php echo htmlspecialchars($actualite['contenu']) ?></p>
+        </div>
         <p>Publié par <?php echo htmlspecialchars($actualite['nom_utilisateur']) . " " . htmlspecialchars($actualite['prenom']) ?>
             , le <?php echo htmlspecialchars(date('d/m/Y - H:i:s', strtotime($actualite['date_creation']))) ?></p>
 

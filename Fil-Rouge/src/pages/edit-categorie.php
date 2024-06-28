@@ -54,6 +54,15 @@ if (isset($_SESSION['id']) && $_SESSION['statut'] === 4) {
                         'Id_statut' => $statutCoche
                     ]);
                 }
+
+                $nomModif = str_replace(' ', '-', $categorie['nom_famille']);
+                $nomModif = strtolower($nomModif);
+
+                $nouveauNom = str_replace(' ', '-', $_POST['famille']);
+                $nouveauNom = strtolower($nouveauNom);
+
+                rename("assets/img/materiels/" . $nomModif, "assets/img/materiels/" . $nouveauNom);
+
                 header('Location: /?page=categories');
                 die;
             }
